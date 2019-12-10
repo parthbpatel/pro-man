@@ -1,0 +1,28 @@
+<%= simple_form_for(@team) do |f| %>
+	<div class="content">
+		<h2 class="title is-4">Invite users</h2>
+		<p>Invite users to create an account and join this team. Each user will be sent a confirmation email in which they can supply their own unique password.</p>
+	</div>
+
+			<div class="field">
+				<div class="control">
+					<label class="label">Name</label>
+					<%= f.input :name %>
+				</div>
+			</div>
+
+			<input type="hidden" value="<%= current_user.id %>" />
+		<hr />
+
+	<hr />
+
+	<div class="field">
+		<div class="control">
+			<% if current_page?(new_team_path) %>
+				<%= f.button :submit, class: "button is-link" %>Create Team
+			<% else %>
+				<%= f.button :submit, class: "button is-link" %>Save Team
+			<% end %>
+		</div>
+	</div>
+<% end %>

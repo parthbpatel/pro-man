@@ -19,6 +19,13 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Authentication
 gem 'devise'
+# Forms made easy!
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'public_activity', '~> 1.6', '>= 1.6.4'
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

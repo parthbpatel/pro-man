@@ -1,0 +1,43 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+	<% if !current_user.team_id.blank? %>
+   <div class="field">
+   	<div class="control">
+   		<%= f.input :name %>
+   	</div>
+   </div>
+   <div class="field">
+   	<div class="control">
+   		<%= f.input :description %>
+   	</div>
+   </div>
+
+   <div class="field">
+   	<div class="control">
+   		<label class="label">Team</label>
+   		<div class="">
+   			<span class="select">
+   				<%= f.input_field :team_id, collection: @teams, prompt: "Select team" %>
+   			</span>
+   		</div>
+   	</div>
+   </div>
+
+   <div class="field">
+   	<div class="control">
+   		<%= f.button :submit, class: "button is-link" %>
+   	</div>
+   </div>
+	<% else %>
+
+			<div class="">
+				<strong>It looks as though you are not part of a team yet!</strong>
+				<p>You can create a team or get invited by another user to join.</p>
+				<br />
+				<%= link_to 'Create a team', new_team_path, class:'button' %>
+			</div>
+
+	<% end %>
+
+<% end %>
